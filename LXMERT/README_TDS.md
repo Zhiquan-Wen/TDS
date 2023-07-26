@@ -9,7 +9,7 @@
  | Model | Link| Acc (%)|
  | :-: | :-: | :-: |
  |LXMERT (VQACP-v2)|https://gh.ddlc.top/https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv2_train_lxmert/BEST.pth| 41.72|
- |LXMERT (VQACP-v1)|https://git.xfj0.cn/https://github.com/Zhiquan-Wen/TDS/releases/download/
+ |LXMERT (VQACP-v1)|https://gh.con.sh/https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv1_train_lxmert/BEST.pth|38.21|
 
 
 ### Test-Time Adaptation 
@@ -23,7 +23,7 @@ CUDA_VISIBLE_DEVICES=0 python src/tasks/TDS.py --dataroot data/vqacp2/ --img_roo
 ```
 python comput_score.py --input saved_models_cp2/test.json --dataroot data/vqacp2/
 ```
-* Our results of UpDn for [VQACP v1](https://download.yzuu.cf/Zhiquan-Wen/TDS/releases/download/LXMERT_vqacp1_results/test.json) and [VQACP v2](https://gh.ddlc.top/https://github.com/Zhiquan-Wen/TDS/releases/download/LXMERT_vqacp2_results/test.json) results can be downloaded.
+* Our results of LXMERT for [VQACP v1](https://download.yzuu.cf/Zhiquan-Wen/TDS/releases/download/LXMERT_vqacp1_results/test.json) and [VQACP v2](https://gh.ddlc.top/https://github.com/Zhiquan-Wen/TDS/releases/download/LXMERT_vqacp2_results/test.json) results can be downloaded.
 
 ## Quick Reproduce
 
