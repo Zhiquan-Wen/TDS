@@ -46,7 +46,7 @@ def parse_args():
     parser.add_argument('--dataroot', type=str, default='')
     parser.add_argument('--checkpoint_path', type=str, default='')
     parser.add_argument('--img_root', type=str, default=' ')
-    parser.add_argument('--learning_rate', type=float, default=0.001)
+    parser.add_argument('--learning_rate', type=float, default=0.0001)
     parser.add_argument('--weight_decay', type=float, default=0)
     parser.add_argument('--rate', type=float, default=0.2)
 
