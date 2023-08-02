@@ -108,7 +108,7 @@ if __name__ == '__main__':
 
             loss_mask = loss_mask & (1 - mask_v)
 
-            loss = (loss * loss_mask.float()).sum() / sum(loss_mask.float())
+            loss = (loss * loss_mask.float()).sum() / sum(loss_mask.float() + 1e-5)
 
             total_loss = loss + loss_logits + loss_logits_
             total_loss.backward()
