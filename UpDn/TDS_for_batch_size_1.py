@@ -41,20 +41,19 @@ def parse_args():
     parser.add_argument('--num_hid', type=int, default=512)
     parser.add_argument('--model', type=str, default='baseline0_newatt')
     parser.add_argument('--output', type=str, default='saved_models/exp1_num_hid_512')
-    parser.add_argument('--seed', type=int, default=2)
-    parser.add_argument('--batch_size', type=int, default=512)
+    parser.add_argument('--batch_size', type=int, default=1)
     parser.add_argument('--seed', type=int, default=1111, help='random seed')
     parser.add_argument('--dataroot', type=str, default='')
     parser.add_argument('--checkpoint_path', type=str, default='')
     parser.add_argument('--img_root', type=str, default=' ')
-    parser.add_argument('--learning_rate', type=float, default=0.01)
+    parser.add_argument('--learning_rate', type=float, default=0.001)
     parser.add_argument('--weight_decay', type=float, default=0)
     parser.add_argument('--rate', type=float, default=0.2)
 
     args = parser.parse_args()
     return args
 
-
+# if __name__ == '__main__':
 def main(opt):
 
     seed = opt.seed
@@ -111,44 +110,36 @@ def main(opt):
             # then train the model
             model.train(True)
             logits_ = model(v, b, q, mask, a)
-            if self_sup:
-                index_v = random.sample(range(0, batch_size), batch_size)
-                gv_neg = v[index_v]
-                logits_neg_v = model(gv_neg, b, q, mask, a)
+
+            # introduce noise
+            gv_neg = F.normalize(torch.randn(v.size())).cuda()
+            logits_neg_v = model(gv_neg, b, q, mask, a)
 
             optim.zero_grad()
             loss = softmax_entropy(logits_)
 
-            # filter samples with high entropy
             loss_mask = (loss <= Entropy).cuda()
 
             gt_predict = torch.argmax(logits_, dim=1)
             neg_v_predict = torch.argmax(logits_neg_v, dim=1)
 
-            # filter biased samples
             mask_v = (gt_predict == neg_v_predict)
 
-            # recognize true biased samples
             bias_sample = mask_v & loss_mask
             loss_min_logits, _ = torch.max(F.softmax(logits_neg_v, dim=1), dim=1)
             loss_min_logits_, _ = torch.max(F.softmax(logits_, dim=1), dim=1)
-            if sum(bias_sample.float()) == 0:
+            if sum(bias_sample.float()) > 0.5:
+                loss_logits_ = loss_min_logits_.sum()
+                loss_logits = loss_min_logits.sum()
+            else:
                 loss_logits = 0
                 loss_logits_ = 0
-            else:
-                loss_logits = (bias_sample.float() * loss_min_logits).sum() / sum(bias_sample.float())
-                loss_logits_ = (bias_sample.float() * loss_min_logits_).sum() / sum(bias_sample.float())
 
-            # fitler the gradient of both biased and high entropy samples 
             loss_mask = loss_mask & (1 - mask_v)
-
-            if sum(loss_mask.float()) == 0:
+            if sum(loss_mask.float()) < 0.5:
                 loss = 0
-            else:
-                loss = (loss * loss_mask.float()).sum() / sum(loss_mask.float()) 
 
             total_loss = loss + loss_logits + loss_logits_
-
             if total_loss == 0:
                 idx += batch_size
                 continue
