@@ -280,7 +280,7 @@ def main():
 
     # model.eval()
     # when run evaluate, we run each task sequentially.
-    optimizer = SGD(model.parameters(), lr=task_cfg["TASK21"]["lr"], momentum=0.9, weight_decay=task_cfg["TASK21"]["weight_decay"])
+    optimizer = SGD(model.parameters(), lr=task_cfg[task]["lr"], momentum=0.9, weight_decay=task_cfg[task]["weight_decay"])
     for task_id in task_ids:
         results = []
         others = []
@@ -344,7 +344,7 @@ def EvaluatingModel(
 
         task_tokens = question.new().resize_(question.size(0), 1).fill_(int(task_id[4:]))
 
-        Entropy = 7.7293 * task_cfg['TASK20']['rate']
+        Entropy = 7.7293 * task_cfg[task_id]['rate']
 
         # with torch.no_grad():
         model.train(False)
@@ -415,7 +415,7 @@ def EvaluatingModel(
 
         loss_mask = loss_mask & (~mask_v)
 
-        loss = (loss * loss_mask.float()).sum() / sum(loss_mask.float() + 1e-5) 
+        loss = (loss * loss_mask.float()).sum() / sum(loss_mask.float()) 
 
         total_loss = loss + loss_logits + loss_logits_
         
