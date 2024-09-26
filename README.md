@@ -39,12 +39,12 @@ cd ..
 
  | Model | Link| Acc (%)|
  | :-: | :-: | :-: |
- |UpDn (VQACP-v2)|https://download.nuaa.cf/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv2_train/model.pth| 40.94|
- |UpDn (VQACP-v1)|https://cors.isteed.cc/github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv1_train/model.pth| 38.78|
- |LXMERT (VQACP-v2)|https://gh.ddlc.top/https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv2_train_lxmert/BEST.pth| 41.72|
- |LXMERT (VQACP-v1)|https://git.xfj0.cn/https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv1_train_lxmert/BEST.pth| 38.21|
- |ViLBERT (VQACP-v2)|https://gh.h233.eu.org/https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv2_train_vilbert/pytorch_model_18.bin|40.75|
- |ViLBERT (VQACP-v1)|https://ghps.cc/https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv1_train_vilbert/pytorch_model_12.bin|39.59|
+ |UpDn (VQACP-v2)|[https://Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv2_train/model.pth](https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv2_train/model.pth)| 40.94|
+ |UpDn (VQACP-v1)|[https://cors.isteed.cc/github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv1_train/model.pth](https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv1_train/model.pth)| 38.78|
+ |LXMERT (VQACP-v2)|[https://gh.ddlc.top/https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv2_train_lxmert/BEST.pth](https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv2_train_lxmert/BEST.pth)| 41.72|
+ |LXMERT (VQACP-v1)|[https://git.xfj0.cn/https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv1_train_lxmert/BEST.pth](https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv1_train_lxmert/BEST.pth)| 38.21|
+ |ViLBERT (VQACP-v2)|[https://gh.h233.eu.org/https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv2_train_vilbert/pytorch_model_18.bin](https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv2_train_vilbert/pytorch_model_18.bin)|40.75|
+ |ViLBERT (VQACP-v1)|[https://ghps.cc/https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv1_train_vilbert/pytorch_model_12.bin](https://github.com/Zhiquan-Wen/TDS/releases/download/Pretrained_Model_on_VQACPv1_train_vilbert/pytorch_model_12.bin)|39.59|
 
 
 ### Test-Time Adaptation 
