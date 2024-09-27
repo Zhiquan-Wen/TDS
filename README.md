@@ -35,6 +35,10 @@ python preprocess_text.py --dataroot vqacp2/ --version v2
 cd ..
 ```
 
+### Download VQA-CP v2 dataset
+ You can download the [VQACP v2 dataset](https://drive.google.com/file/d/1xQ6O7FG4b3C6yLFmT-5IVbbD4ECNmvj3/view?usp=sharing)  with Google Drive.
+
+
 ### Download the baseline models pre-trained on VQA-CP v2 training set 
 
  | Model | Link| Acc (%)|
