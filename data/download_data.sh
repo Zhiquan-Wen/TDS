@@ -10,8 +10,8 @@ unzip coco/trainval_36.zip -d coco/
 rm coco/trainval_36.zip
 
 #download vqacp2
-wget -P vqacp2/ https://computing.ece.vt.edu/~aish/vqacp/vqacp_v2_train_questions.json
-wget -P vqacp2/ https://computing.ece.vt.edu/~aish/vqacp/vqacp_v2_test_questions.json
-wget -P vqacp2/ https://computing.ece.vt.edu/~aish/vqacp/vqacp_v2_train_annotations.json
-wget -P vqacp2/ https://computing.ece.vt.edu/~aish/vqacp/vqacp_v2_test_annotations.json
+#wget -P vqacp2/ https://computing.ece.vt.edu/~aish/vqacp/vqacp_v2_train_questions.json
+#wget -P vqacp2/ https://computing.ece.vt.edu/~aish/vqacp/vqacp_v2_test_questions.json
+#wget -P vqacp2/ https://computing.ece.vt.edu/~aish/vqacp/vqacp_v2_train_annotations.json
+#wget -P vqacp2/ https://computing.ece.vt.edu/~aish/vqacp/vqacp_v2_test_annotations.json
 
